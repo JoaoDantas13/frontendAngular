@@ -1,0 +1,15 @@
+
+<div class="card" style="width: 18rem;">
+    <img [src]="foto" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ nomeProduto }}</h5>
+        <p class="card-text">
+            Identificação: {{idProduto | number: '2.0-0'}}
+            <span *ngIf="promocao; else elseBlock" class="badge badge-sucess">Promoção</span>
+            <ng-template #elseBlock>
+                <span class="badge badge-primary">Aproveite</span>
+            </ng-template>
+        </p>
+        <a href="#" class="btn btn-primary float-right">{{ precoProduto | currency: 'BRL' : 'R$' }}</a>
+    </div>
+</div>
